@@ -1,0 +1,7 @@
+parameters:
+#    radius_integration.example.class: GarbledTutors\RadiusIntegrationBundle\Example
+
+services:
+#    radius_integration.example:
+#        class: %radius_integration.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

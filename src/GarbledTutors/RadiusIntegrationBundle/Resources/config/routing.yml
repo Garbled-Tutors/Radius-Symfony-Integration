@@ -1,0 +1,3 @@
+radius_integration_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: RadiusIntegrationBundle:Default:index }
