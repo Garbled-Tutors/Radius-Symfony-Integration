@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Radacct" table="radacct">
+    <id name="radacctid" type="bigint" column="radacctid">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="acctsessionid" type="string" column="acctsessionid" length="64" nullable="false"/>
+    <field name="acctuniqueid" type="string" column="acctuniqueid" length="32" nullable="false"/>
+    <field name="username" type="string" column="username" length="64" nullable="false"/>
+    <field name="groupname" type="string" column="groupname" length="64" nullable="false"/>
+    <field name="realm" type="string" column="realm" length="64" nullable="true"/>
+    <field name="nasipaddress" type="string" column="nasipaddress" length="15" nullable="false"/>
+    <field name="nasportid" type="string" column="nasportid" length="15" nullable="true"/>
+    <field name="nasporttype" type="string" column="nasporttype" length="32" nullable="true"/>
+    <field name="acctstarttime" type="datetime" column="acctstarttime" nullable="true"/>
+    <field name="acctstoptime" type="datetime" column="acctstoptime" nullable="true"/>
+    <field name="acctsessiontime" type="integer" column="acctsessiontime" nullable="true"/>
+    <field name="acctauthentic" type="string" column="acctauthentic" length="32" nullable="true"/>
+    <field name="connectinfoStart" type="string" column="connectinfo_start" length="50" nullable="true"/>
+    <field name="connectinfoStop" type="string" column="connectinfo_stop" length="50" nullable="true"/>
+    <field name="acctinputoctets" type="bigint" column="acctinputoctets" nullable="true"/>
+    <field name="acctoutputoctets" type="bigint" column="acctoutputoctets" nullable="true"/>
+    <field name="calledstationid" type="string" column="calledstationid" length="50" nullable="false"/>
+    <field name="callingstationid" type="string" column="callingstationid" length="50" nullable="false"/>
+    <field name="acctterminatecause" type="string" column="acctterminatecause" length="32" nullable="false"/>
+    <field name="servicetype" type="string" column="servicetype" length="32" nullable="true"/>
+    <field name="framedprotocol" type="string" column="framedprotocol" length="32" nullable="true"/>
+    <field name="framedipaddress" type="string" column="framedipaddress" length="15" nullable="false"/>
+    <field name="acctstartdelay" type="integer" column="acctstartdelay" nullable="true"/>
+    <field name="acctstopdelay" type="integer" column="acctstopdelay" nullable="true"/>
+    <field name="xascendsessionsvrkey" type="string" column="xascendsessionsvrkey" length="10" nullable="true"/>
+  </entity>
+</doctrine-mapping>
