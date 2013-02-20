@@ -1,3 +1,7 @@
 radius_integration_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: RadiusIntegrationBundle:Default:index }
+
+RadiusIntegrationBundle_radcheck:
+    resource: "@RadiusIntegrationBundle/Resources/config/routing/radcheck.yml"
+    prefix:   /radcheck

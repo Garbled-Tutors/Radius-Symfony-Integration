@@ -1,0 +1,30 @@
+radcheck:
+    pattern:  /
+    defaults: { _controller: "RadiusIntegrationBundle:Radcheck:index" }
+
+radcheck_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "RadiusIntegrationBundle:Radcheck:show" }
+
+radcheck_new:
+    pattern:  /new
+    defaults: { _controller: "RadiusIntegrationBundle:Radcheck:new" }
+
+radcheck_create:
+    pattern:  /create
+    defaults: { _controller: "RadiusIntegrationBundle:Radcheck:create" }
+    requirements: { _method: post }
+
+radcheck_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "RadiusIntegrationBundle:Radcheck:edit" }
+
+radcheck_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "RadiusIntegrationBundle:Radcheck:update" }
+    requirements: { _method: post }
+
+radcheck_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "RadiusIntegrationBundle:Radcheck:delete" }
+    requirements: { _method: post }
