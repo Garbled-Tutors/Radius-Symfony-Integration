@@ -1,0 +1,7 @@
+default:
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte: ~
+      selenium2: ~
+      base_url: http://localhost:8000/
+    Behat\Symfony2Extension\Extension: ~
