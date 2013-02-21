@@ -12,3 +12,6 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+parameters:
+    database_name:     radius_integration_testing

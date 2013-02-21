@@ -24,3 +24,5 @@ assetic:
 
 #swiftmailer:
 #    delivery_address: me@example.com
+parameters:
+    database_name:     radius_integration
