@@ -4,7 +4,8 @@ Feature: Add New User
 	I am able to create new users
 
 	Scenario: Create new user
-		Given I am on "/radcheck/new"
+		Given I am logged in as "admin"
+		And I am on "/radcheck/new"
 		When I fill in "Username" with "joe"
 		And I fill in "Password" with "secure"
 		And I fill in "Password Repeat" with "secure"

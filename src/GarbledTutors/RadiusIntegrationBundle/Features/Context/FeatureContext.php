@@ -48,6 +48,15 @@ class FeatureContext extends MinkContext // BehatContext //MinkContext if you wa
         $this->kernel = $kernel;
     }
 
+    /**
+     * @Given /^I am logged in as "([^"]*)"$/
+     */
+    public function iAmLoggedInAs($arg1)
+    {
+			//TODO: Create this function
+    }
+
+
 //
 // Place your definition and hook methods here:
 //

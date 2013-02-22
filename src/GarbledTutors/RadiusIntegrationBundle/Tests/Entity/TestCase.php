@@ -69,6 +69,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
 			if ( ! empty($metadatas)) {
 					// Create SchemaTool
 					$tool = new SchemaTool($this->entityManager);
+					$tool->dropSchema($metadatas); // This is just in case the previous test failed and didn't drop the database
 					$tool->createSchema($metadatas);
 			} else {
 					throw new Doctrine\DBAL\Schema\SchemaException('No Metadata Classes to process.');
