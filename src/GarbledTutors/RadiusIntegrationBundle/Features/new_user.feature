@@ -8,6 +8,6 @@ Feature: Add New User
 		And I am on "/radcheck/new"
 		When I fill in "Username" with "joe"
 		And I fill in "Password" with "secure"
-		And I fill in "Password Repeat" with "secure"
+		And I fill in "Password repeat" with "secure"
 		And I press "Create"
 		Then I should see "Created new user"

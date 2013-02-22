@@ -53,9 +53,27 @@ class FeatureContext extends MinkContext // BehatContext //MinkContext if you wa
      */
     public function iAmLoggedInAs($arg1)
     {
-			//TODO: Create this function
+			$this->visit('/logout');
+			$this->visit('/login');
+			if ($arg1 == 'admin')
+			{
+				$this->getSession()->getPage()->fillField('Username','admin');
+				$this->getSession()->getPage()->fillField('Password','securepass');
+			}
+			else
+			{
+        throw new PendingException();
+			}
     }
 
+
+    /**
+     * @Given /^I am not logged in$/
+     */
+    public function iAmNotLoggedIn()
+    {
+			$this->visit('/logout');
+    }
 
 //
 // Place your definition and hook methods here:
