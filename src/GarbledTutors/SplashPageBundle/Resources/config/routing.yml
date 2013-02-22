@@ -1,0 +1,3 @@
+splash_page_homepage:
+    pattern:  /
+    defaults: { _controller: SplashPageBundle:Default:index }
