@@ -49,28 +49,57 @@ class FeatureContext extends MinkContext // BehatContext //MinkContext if you wa
     }
 
     /**
-     * @Given /^I am logged in as "([^"]*)"$/
-     */
-    public function iAmLoggedInAs($arg1)
-    {
-			$this->visit('/logout');
-			$this->visit('/login');
-			if ($arg1 == 'admin')
-			{
-				$this->getSession()->getPage()->fillField('Username','admin');
-				$this->getSession()->getPage()->fillField('Password','securepass');
-			}
-			else
-			{
-        throw new PendingException();
-			}
-    }
-
-
-    /**
      * @Given /^I am not logged in$/
      */
     public function iAmNotLoggedIn()
+    {
+			$this->visit('/logout');
+    }
+
+    /**
+     * @Then /^I should be able to login as "([^"]*)" with the password "([^"]*)"$/
+     */
+    public function iShouldBeAbleToLoginAsWithThePassword($arg1, $arg2)
+    {
+			$this->visit('/logout');
+			$this->visit('/login');
+			$this->getSession()->getPage()->fillField('Username',$arg1);
+			$this->getSession()->getPage()->fillField('Password',$arg2);
+			$this->getSession()->getPage()->findButton('login')->press();
+    }
+
+    /**
+     * @Given /^I am logged in as an administrator$/
+     */
+    public function iAmLoggedInAsAnAdministrator()
+    {
+			$this->iShouldBeAbleToLoginAsWithThePassword('admin','securepass');
+    }
+
+    /**
+     * @When /^I create a new user$/
+     */
+    public function iCreateANewUser()
+    {
+			$this->iCreateANewUserWithAndAsTheUsernameAndPassword('joe','randpass');
+    }
+
+    /**
+     * @When /^I create a new user, with "([^"]*)" and "([^"]*)" as the username and password$/
+     */
+    public function iCreateANewUserWithAndAsTheUsernameAndPassword($arg1, $arg2)
+    {
+			$this->visit('/radcheck/new');
+			$this->getSession()->getPage()->fillField('Username',$arg1);
+			$this->getSession()->getPage()->fillField('Password',$arg2);
+			$this->getSession()->getPage()->fillField('Password',$arg2);
+			$this->getSession()->getPage()->findButton('Create')->press();
+    }
+
+    /**
+     * @Given /^I logout$/
+     */
+    public function iLogout()
     {
 			$this->visit('/logout');
     }

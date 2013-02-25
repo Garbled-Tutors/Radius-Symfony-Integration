@@ -4,10 +4,12 @@ Feature: Add New User
 	I am able to create new users
 
 	Scenario: Create new user
-		Given I am logged in as "admin"
-		And I am on "/radcheck/new"
-		When I fill in "Username" with "joe"
-		And I fill in "Password" with "secure"
-		And I fill in "Password repeat" with "secure"
-		And I press "Create"
+		Given I am logged in as an administrator
+		When I create a new user
 		Then I should see "Created new user"
+	
+	Scenario: Login as new user
+		Given I am logged in as an administrator
+		When I create a new user, with "joe" and "123" as the username and password
+		And I logout
+		Then I should be able to login as "joe" with the password "123"
