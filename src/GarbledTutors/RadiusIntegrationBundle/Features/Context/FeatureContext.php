@@ -92,7 +92,7 @@ class FeatureContext extends MinkContext // BehatContext //MinkContext if you wa
 			$this->visit('/radcheck/new');
 			$this->getSession()->getPage()->fillField('Username',$arg1);
 			$this->getSession()->getPage()->fillField('Password',$arg2);
-			$this->getSession()->getPage()->fillField('Password',$arg2);
+			$this->getSession()->getPage()->fillField('Password Repeat',$arg2);
 			$this->getSession()->getPage()->findButton('Create')->press();
     }
 
